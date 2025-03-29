@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>熊猫烧香病毒分析（上） | Tower</title><meta name="author" content="tower"><meta name="copyright" content="tower"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="transparent"><meta name="description" content="[TOC] 准备样本信息： 文件名：xiongmao.txt MD5：512301c535c88255c9a252fdf70b7a03 SHA256:40fee2a4be91d9d46cc133328ed41a3bdf9099be5084efbc95c8d0535ecee496 大小：30,001 字节 实验环境与工具：虚拟环境：windows_7_ultimate_with_sp1_x86 工具">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>熊猫烧香病毒分析（上） | Tower</title><meta name="author" content="tower"><meta name="copyright" content="tower"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="transparent"><meta name="description" content="准备样本信息： 文件名：xiongmao.txt MD5：512301c535c88255c9a252fdf70b7a03 SHA256:40fee2a4be91d9d46cc133328ed41a3bdf9099be5084efbc95c8d0535ecee496 大小：30,001 字节 实验环境与工具：虚拟环境：windows_7_ultimate_with_sp1_x86 工具：IDA_P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="熊猫烧香病毒分析（上）">
 <meta property="og:url" content="https://tianhetonghua.github.io/post/1f2365ca">
 <meta property="og:site_name" content="Tower">
-<meta property="og:description" content="[TOC] 准备样本信息： 文件名：xiongmao.txt MD5：512301c535c88255c9a252fdf70b7a03 SHA256:40fee2a4be91d9d46cc133328ed41a3bdf9099be5084efbc95c8d0535ecee496 大小：30,001 字节 实验环境与工具：虚拟环境：windows_7_ultimate_with_sp1_x86 工具">
+<meta property="og:description" content="准备样本信息： 文件名：xiongmao.txt MD5：512301c535c88255c9a252fdf70b7a03 SHA256:40fee2a4be91d9d46cc133328ed41a3bdf9099be5084efbc95c8d0535ecee496 大小：30,001 字节 实验环境与工具：虚拟环境：windows_7_ultimate_with_sp1_x86 工具：IDA_P">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tianhetonghua.github.io/images/avatar.jpg">
 <meta property="article:published_time" content="2025-03-28T14:35:43.000Z">
-<meta property="article:modified_time" content="2025-03-29T10:30:14.606Z">
+<meta property="article:modified_time" content="2025-03-29T10:51:33.652Z">
 <meta property="article:author" content="tower">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tianhetonghua.github.io/images/avatar.jpg"><script type="application/ld+json">{
@@ -17,7 +17,7 @@
   "url": "https://tianhetonghua.github.io/post/1f2365ca",
   "image": "https://tianhetonghua.github.io/images/avatar.jpg",
   "datePublished": "2025-03-28T14:35:43.000Z",
-  "dateModified": "2025-03-29T10:30:14.606Z",
+  "dateModified": "2025-03-29T10:51:33.652Z",
   "author": [
     {
       "@type": "Person",
@@ -158,8 +158,7 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><link rel="stylesheet" href="/_data/styles.styl"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Tower</span></a><a class="nav-page-title" href="/"><span class="site-name">熊猫烧香病毒分析（上）</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">熊猫烧香病毒分析（上）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-28T14:35:43.000Z" title="发表于 2025-03-28 22:35:43">2025-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-29T10:30:14.606Z" title="更新于 2025-03-29 18:30:14">2025-03-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>[TOC]</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="样本信息："><a href="#样本信息：" class="headerlink" title="样本信息："></a>样本信息：</h2><p><img src="/post/1f2365ca/image-20250328225617986.png" alt="image-20250328225617986"></p>
+}</script><link rel="stylesheet" href="/_data/styles.styl"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Tower</span></a><a class="nav-page-title" href="/"><span class="site-name">熊猫烧香病毒分析（上）</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">熊猫烧香病毒分析（上）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-28T14:35:43.000Z" title="发表于 2025-03-28 22:35:43">2025-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-29T10:51:33.652Z" title="更新于 2025-03-29 18:51:33">2025-03-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="样本信息："><a href="#样本信息：" class="headerlink" title="样本信息："></a>样本信息：</h2><p><img src="/post/1f2365ca/image-20250328225617986.png" alt="image-20250328225617986"></p>
 <p><strong>文件名</strong>：xiongmao.txt</p>
 <p><strong>MD5</strong>：512301c535c88255c9a252fdf70b7a03</p>
 <p><strong>SHA256</strong>:40fee2a4be91d9d46cc133328ed41a3bdf9099be5084efbc95c8d0535ecee496</p>
@@ -168,14 +167,16 @@
 <p><strong>工具</strong>：IDA_Pro、x64dbg、PCHunter、HRSword、DIE_win32   （由于HRSword进程总是被病毒干掉，得结合着PCHunter和录屏来看）</p>
 <h1 id="行为分析"><a href="#行为分析" class="headerlink" title="行为分析"></a>行为分析</h1><p><em>tips</em>:由于是在win7系统中进行的行为分析，我们需要使用以管理员身份运行。在win xp系统中，默认用户拥有管理员权限，无需授权的执行就可以修改系统文件，这也就给计算机病毒提供了温床。</p>
 <h2 id="1-启动资源管理器发生闪退"><a href="#1-启动资源管理器发生闪退" class="headerlink" title="1.启动资源管理器发生闪退"></a>1.启动资源管理器发生闪退</h2><p>病毒成功运行。</p>
-<h2 id="2-复制到drivers路径下："><a href="#2-复制到drivers路径下：" class="headerlink" title="2.复制到drivers路径下："></a>2.复制到drivers路径下：</h2><p>并创建相关启动项</p>
+<h2 id="2-复制到drivers路径下："><a href="#2-复制到drivers路径下：" class="headerlink" title="2.复制到drivers路径下："></a>2.复制到drivers路径下：</h2><p><img src="/post/1f2365ca/QQ20250329-184849.png" alt="QQ20250329-184849"></p>
+<p>并创建相关启动项</p>
 <p><img src="/post/1f2365ca/image-20250329113509725.png" alt="image-20250329113509725"></p>
 <p><img src="/post/1f2365ca/image-20250329112612159.png" alt="image-20250329112612159"></p>
 <h2 id="3-程序的exe文件被“感染”"><a href="#3-程序的exe文件被“感染”" class="headerlink" title="3.程序的exe文件被“感染”"></a>3.程序的exe文件被“感染”</h2><p><img src="/post/1f2365ca/1280X1280.PNG" alt="1280X1280"></p>
 <h2 id="4-创建大量Desktop-ini文件"><a href="#4-创建大量Desktop-ini文件" class="headerlink" title="4.创建大量Desktop.ini文件"></a>4.创建大量Desktop.ini文件</h2><p>几乎每个路径下都有，只写入了创建时间。</p>
 <p><img src="/post/1f2365ca/image-20250329101207009.png" alt="image-20250329101207009"></p>
 <p><img src="/post/1f2365ca/image-20250329111920539.png" alt="image-20250329111920539"></p>
-<h2 id="5-在C盘根目录下创建setup-exe和autorun-inf"><a href="#5-在C盘根目录下创建setup-exe和autorun-inf" class="headerlink" title="5.在C盘根目录下创建setup.exe和autorun.inf"></a>5.在C盘根目录下创建setup.exe和autorun.inf</h2><p><em>两个文件有隐藏属性</em></p>
+<h2 id="5-在C盘根目录下创建setup-exe和autorun-inf"><a href="#5-在C盘根目录下创建setup-exe和autorun-inf" class="headerlink" title="5.在C盘根目录下创建setup.exe和autorun.inf"></a>5.在C盘根目录下创建setup.exe和autorun.inf</h2><p><img src="/post/1f2365ca/QQ20250329-184904.png" alt="QQ20250329-184904"></p>
+<p><em>两个文件有隐藏属性</em></p>
 <p><img src="/post/1f2365ca/QQ20250329-005616-1743220484072-6.png" alt="QQ20250329-005616-1743220484072-6"></p>
 <p>病毒作者意图是访问c盘或插入U盘时，自动启动setup文件，但这个样的设计已经在win7即更高版本的Windows系统中失效。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- Windows 7 及更新系统默认禁用 U盘移动硬盘的 autorun.inf 自动运行功能（仅保留光驱支持）。</span><br><span class="line">- 需手动打开设备或触发右键菜单才会执行程序。</span><br></pre></td></tr></table></figure>
